@@ -1,0 +1,56 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+}
+
+.nav {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Center items vertically */
+    gap: 1rem;
+    padding: 0 3rem;
+    width: 100%;
+}
+
+.nav a {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    align-items: center; /* Center text vertically */
+    justify-content: center; /* Center text horizontally */
+    text-align: center;
+    padding: 0.25rem 1rem; /* Adjust padding for consistent height */
+}
+
+.site-title{
+    font-size: 3rem;
+}
+.nav ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    gap:2rem;
+}
+.nav li {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center items horizontally within the list item */
+    padding: 1rem 1rem; /* Adjust padding as needed */
+}
+
+.nav li.active{
+    background-color: rebeccapurple;
+}
+
+.nav li:hover{
+    background-color: red;
+}
+.bar{
+    width: 100px;
+}
