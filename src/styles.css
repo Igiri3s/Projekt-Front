@@ -45,7 +45,8 @@ body{
 }
 
 .nav li.active{
-    background-color: rebeccapurple;
+    background-color: yellow;
+    color:black;
 }
 
 .nav li:hover{

@@ -1,0 +1,78 @@
+.banana-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    background-color: black; /* Optional: to match the background */
+}
+
+.header-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.content-section {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin-top: 20px;
+}
+
+.banana-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.upgrades-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.banana {
+    cursor: pointer;
+    transition: width 0.1s ease, height 0.1s ease;
+}
+
+p {
+    font-size: 1.5rem;
+    color: #FFD700;
+}
+
+.upgrades {
+    border: 2px solid yellow;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.upgrades button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #FFD700;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.upgrades button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.upgrades button:hover:not(:disabled) {
+    background-color: #FFC107;
+}
+
+.upgrades h2 {
+    font-size: 1.5rem;
+    color: #FFD700;
+    margin-bottom: 10px;
+}
