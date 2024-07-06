@@ -63,7 +63,7 @@ const Banana = () => {
             <div className="content-section">
                 <div className="banana-section">
                     <img
-                        src="/public/banana.png"
+                        src="../../public/banana.png"
                         alt="Banana"
                         className="banana"
                         style={{ width: `${size}px`, height: `${size}px` }}
