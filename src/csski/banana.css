@@ -16,21 +16,18 @@
     display: flex;
     justify-content: space-between;
     width: 80%;
+    max-width: 1200px;
     margin-top: 20px;
+    flex-wrap: wrap;
 }
 
-.banana-section {
+.banana-section, .upgrades-section {
     display: flex;
     flex-direction: column;
     align-items: center;
     flex: 1;
-}
-
-.upgrades-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 1;
+    min-width: 300px;
+    margin: 10px;
 }
 
 .banana {
@@ -84,6 +81,12 @@ p {
     .content-section {
         flex-direction: column;
         align-items: center;
+        width: 100%;
+    }
+
+    .banana-section, .upgrades-section {
+        min-width: 100%;
+        margin: 10px 0;
     }
 
     .upgrades {
