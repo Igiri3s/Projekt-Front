@@ -1,5 +1,6 @@
-import './styles.css';
+import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import './csski/styles.css';
 
 function Navbar() {
     const location = useLocation();
@@ -10,19 +11,21 @@ function Navbar() {
                 Projekt zaliczeniowy
             </Link>
             <ul>
-                <CustomLink to="/banana" isActive={location.pathname === "/banana"}>Banana</CustomLink>
-                <CustomLink to="/about" isActive={location.pathname === "/about"}>About</CustomLink>
+                <CustomLink to="/banana" isActive={location.pathname === "/banana"}>
+                    Banana
+                </CustomLink>
+                <CustomLink to="/about" isActive={location.pathname === "/about"}>
+                    About
+                </CustomLink>
             </ul>
         </nav>
     );
 }
 
-// eslint-disable-next-line react/prop-types
-function CustomLink({ to, children, ...props }) {
-    const path = window.location.pathname;
+function CustomLink({ to, children, isActive }) {
     return (
-        <li className={path === to ? "active" : ""}>
-            <Link to={to} {...props}>{children}</Link>
+        <li className={isActive ? "active" : ""}>
+            <Link to={to}>{children}</Link>
         </li>
     );
 }

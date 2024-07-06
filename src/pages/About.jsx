@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../csski/about.css'; // Poprawna ścieżka do pliku CSS
+import '../csski/about.css';
 
 function About() {
     const [formState, setFormState] = useState({
@@ -9,6 +9,9 @@ function About() {
     });
 
     const [errors, setErrors] = useState({});
+    const [weather, setWeather] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -44,15 +47,39 @@ function About() {
     };
 
     useEffect(() => {
-        const createCrescents = () => {
-            const container = document.querySelector('.falling-crescents');
-            for (let i = 0; i < 10; i++) {
-                const crescent = document.createElement('div');
-                crescent.className = 'crescent';
-                container.appendChild(crescent);
+        const fetchWeatherData = async () => {
+            try {
+                const response = await fetch(
+                    `https://api.openweathermap.org/data/2.5/weather?q=London&appid=cf749dfb283fa25ae44102fe86f820c9&units=metric`
+                );
+
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
+                const data = await response.json();
+                setWeather(data);
+                setLoading(false);
+            } catch (error) {
+                setError(error.message);
+                setLoading(false);
             }
         };
-        createCrescents();
+
+        fetchWeatherData();
+
+        // JavaScript to add multiple falling bananas
+        const createBanana = () => {
+            const banana = document.createElement('div');
+            banana.className = 'crescent';
+            banana.style.left = `${Math.random() * 100}%`;
+            banana.style.animationDuration = `${Math.random() * 5 + 5}s`;
+            document.querySelector('.falling-crescents').appendChild(banana);
+
+        };
+
+        const bananaInterval = setInterval(createBanana, 1000);
+        return () => clearInterval(bananaInterval);
     }, []);
 
     return (
@@ -64,8 +91,20 @@ function About() {
                         Ten projekt zaliczeniowy został stworzony w ramach kursu tworzenia nowoczesnych aplikacji front-endowych.
                         Gra "Kliknij Banana" to innowacyjne podejście do prostych gier, które uczą cierpliwości, refleksji i filozoficznego podejścia do życia.
                         Klikając banany, uczymy się doceniać małe rzeczy i cieszyć się chwilą.
-                        W świecie pełnym pośpiechu, ta gra przypomina nam o znaczeniu obecności i uważności.
+                        Ze względów bezpieczeństwa w grę zalecia sie grać tylko jeżeli w Lodnynie temperatura jest wyższa od 15 stopni
                     </p>
+                    {loading && <p>Loading weather data...</p>}
+                    {error && <p>Error fetching weather data: {error}</p>}
+                    {weather && (
+                        <p className="weather-info">
+                            Aktualna temperatura w Londynie: {weather.main.temp} °C
+                            {weather.main.temp > 15 ? (
+                                <span> - W Londynie super pogoda, można grać bezpiecnzie.</span>
+                            ) : (
+                                <span> - Pogoda nie jest idealna do gry, lepiej poczekać na cieplejsze dni.</span>
+                            )}
+                        </p>
+                    )}
                 </div>
                 <h2 className="contact-title">Formularz kontaktowy</h2>
                 <form className="contact-form" onSubmit={handleSubmit}>

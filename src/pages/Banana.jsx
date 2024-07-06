@@ -3,11 +3,11 @@ import '../csski/banana.css';
 
 const Banana = () => {
     const [count, setCount] = useState(0);
-    const [size, setSize] = useState(300); // Significantly increased size for the banana
+    const [size, setSize] = useState(300);
     const [pointsPerClick, setPointsPerClick] = useState(1);
     const [pointsPerSecond, setPointsPerSecond] = useState(0);
-    const [purchasedUpgrades, setPurchasedUpgrades] = useState([]); // New state to track purchased automatic upgrades
-    const [upgradeCounts, setUpgradeCounts] = useState({}); // New state to track the number of purchases
+    const [purchasedUpgrades, setPurchasedUpgrades] = useState([]);
+    const [upgradeCounts, setUpgradeCounts] = useState({});
     const [upgrades, setUpgrades] = useState([
         { id: 1, name: 'Banana Split Points', cost: 10, effect: 1, type: 'click' },
         { id: 2, name: 'Banana Sundae Points', cost: 50, effect: 10, type: 'click' },

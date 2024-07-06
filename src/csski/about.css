@@ -84,7 +84,7 @@ body {
 .form-group textarea {
     width: 100%;
     padding: 0.75rem;
-    border: 1px solid #8A2BE2; /* Fioletowy */
+    border: 1px solid #8A2BE2;
     border-radius: 5px;
     background-color: #333;
     color: white;
@@ -105,7 +105,7 @@ body {
     padding: 0.75rem;
     border: none;
     border-radius: 5px;
-    background-color: #8A2BE2; /* Fioletowy */
+    background-color: #8A2BE2;
     color: white;
     font-size: 1rem;
     cursor: pointer;
@@ -113,7 +113,7 @@ body {
 }
 
 .submit-button:hover {
-    background-color: #6A1BBF; /* Ciemniejszy fioletowy */
+    background-color: #6A1BBF;
 }
 
 .falling-crescents {
@@ -137,12 +137,11 @@ body {
 }
 .crescent {
     position: absolute;
-    width: 70px; /* skalowanie do 20px */
-    height: 70px; /* skalowanie do 20px */
+    width: 70px;
+    height: 70px;
     background: url('../../public/banana.png') no-repeat center center;
-    background-size: contain; /* dopasowanie obrazka do rozmiaru */
+    background-size: contain;
     animation: fall linear infinite;
-    animation-duration: 7s;
 }
 
 
