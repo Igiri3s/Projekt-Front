@@ -68,14 +68,12 @@ function About() {
 
         fetchWeatherData();
 
-        // JavaScript to add multiple falling bananas
         const createBanana = () => {
             const banana = document.createElement('div');
-            banana.className = 'crescent';
+            banana.className = 'crescent responsive-crescent';
             banana.style.left = `${Math.random() * 100}%`;
             banana.style.animationDuration = `${Math.random() * 5 + 5}s`;
             document.querySelector('.falling-crescents').appendChild(banana);
-
         };
 
         const bananaInterval = setInterval(createBanana, 1000);
@@ -91,7 +89,7 @@ function About() {
                         Ten projekt zaliczeniowy został stworzony w ramach kursu tworzenia nowoczesnych aplikacji front-endowych.
                         Gra "Kliknij Banana" to innowacyjne podejście do prostych gier, które uczą cierpliwości, refleksji i filozoficznego podejścia do życia.
                         Klikając banany, uczymy się doceniać małe rzeczy i cieszyć się chwilą.
-                        Ze względów bezpieczeństwa w grę zalecia sie grać tylko jeżeli w Lodnynie temperatura jest wyższa od 15 stopni
+                        Ze względów bezpieczeństwa w grę zaleca się grać tylko jeżeli w Londynie temperatura jest wyższa od 15 stopni
                     </p>
                     {loading && <p>Loading weather data...</p>}
                     {error && <p>Error fetching weather data: {error}</p>}
@@ -99,7 +97,7 @@ function About() {
                         <p className="weather-info">
                             Aktualna temperatura w Londynie: {weather.main.temp} °C
                             {weather.main.temp > 15 ? (
-                                <span> - W Londynie super pogoda, można grać bezpiecnzie.</span>
+                                <span> - W Londynie super pogoda, można grać bezpieczniej.</span>
                             ) : (
                                 <span> - Pogoda nie jest idealna do gry, lepiej poczekać na cieplejsze dni.</span>
                             )}

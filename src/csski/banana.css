@@ -4,7 +4,7 @@
     align-items: center;
     height: 100vh;
     text-align: center;
-    background-color: black; /* Optional: to match the background */
+    background-color: black;
 }
 
 .header-section {
@@ -47,6 +47,9 @@ p {
     border: 2px solid yellow;
     padding: 20px;
     border-radius: 10px;
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
 }
 
 .upgrades button {
@@ -75,4 +78,33 @@ p {
     font-size: 1.5rem;
     color: #FFD700;
     margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .content-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .upgrades {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .content-section {
+        width: 95%;
+    }
+
+    .banana-section, .upgrades-section {
+        margin-top: 10px;
+    }
+
+    .upgrades {
+        padding: 10px;
+    }
+
+    .upgrades h2 {
+        font-size: 1.2rem;
+    }
 }
