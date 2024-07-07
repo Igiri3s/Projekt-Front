@@ -9,9 +9,9 @@ const Banana = () => {
     const [purchasedUpgrades, setPurchasedUpgrades] = useState([]);
     const [upgradeCounts, setUpgradeCounts] = useState({});
     const [upgrades, setUpgrades] = useState([
-        { id: 1, name: '2 Banany na sekunde', cost: 10, effect: 1, type: 'click' },
-        { id: 2, name: '10 Bananów na sekunde', cost: 50, effect: 10, type: 'click' },
-        { id: 3, name: '50 Bananów na sekunde', cost: 150, effect: 50, type: 'click' },
+        { id: 1, name: '1 Banan', cost: 10, effect: 1, type: 'click' },
+        { id: 2, name: '10 Bananów', cost: 50, effect: 10, type: 'click' },
+        { id: 3, name: '50 Bananów', cost: 150, effect: 50, type: 'click' },
         { id: 4, name: '10 Bananów na sekunde', cost: 200, effect: 10, type: 'automatic', interval: 1000 },
         { id: 5, name: '50 Bananów na sekunde', cost: 1000, effect: 50, type: 'automatic', interval: 1000 }
     ]);
